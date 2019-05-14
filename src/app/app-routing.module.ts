@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomePgComponent } from './home-pg/home-pg.component';
 import { FeaturesComponent } from './features/features.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FightComponent } from './fight/fight.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'features',
     component: FeaturesComponent
+  },
+  {
+    path: 'fight',
+    component: FightComponent
   },
   {
     path: 'profile',

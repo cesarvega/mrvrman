@@ -14,7 +14,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import { UserProfileComponent } from './user-profile/user-profile.component'
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FightComponent } from './fight/fight.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component'
     FooterComponent,
     FeaturesComponent,
     UserProfileComponent,
+    FightComponent,
 
   ],
   imports: [
