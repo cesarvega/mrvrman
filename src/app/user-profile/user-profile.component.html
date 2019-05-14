@@ -1,0 +1,72 @@
+<header>
+  <div class="blackSec">
+    <div class="exWrapper" fxLayout="row" fxLayoutAlign="space-between center">
+      <a routerLink="" id="VRLogoWhite"></a>
+      <nav id="midMenu">
+        <a routerLink="">Quest</a>
+        <a routerLink="">Rift S</a>
+        <a routerLink="">Go</a>
+        <a routerLink="">Rift</a>
+        <a routerLink="">Apps & Games</a>
+        <a routerLink="">Community</a>
+        <a routerLink="">Support</a>
+      </nav>
+      <nav id="logMenu">
+        <div>
+        <button     (click)="logout()"  class="btn btn-success">Logout</button>        
+        <!-- <a routerLink="" class="cart"></a> -->
+        <a routerLink="" class="menu"></a>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="whiteSec">
+    <div class="wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+      <a routerLink="" id="VRLogo"></a>
+      <nav>
+          <a routerLink="/" >Overview</a>
+          <a routerLink="/features" >Features</a>
+          <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      </nav>
+    </div><br><br>
+    <form [formGroup]="profileForm"  (ngSubmit)="UpdateProfile();">  
+      
+    <div class="container"  style="height: 600px;widows: 100%;">
+      <div class="card text-white bg-dark">
+        <div class="card-header">User Profile</div>
+        <div class="card-body col-lg-12 row">
+          <div class="col-lg-3">
+            <div style="margin-top:30px;margin-left:40px ">
+
+              <img *ngIf='photo == null'  src="https://www.edgehill.ac.uk/health/files/2017/12/blank-profile.png" style="border-radius: 50%;height: 160px;widows: 160px;margin-left: 20px">
+              <img *ngIf="photo != null" src="{{photo}}" style="border-radius: 50%;height: 160px;widows: 160px;margin-left: 20px">
+              <h6  style="margin-top: 20px;text-align: center">{{name}}</h6>
+            </div>
+          </div>
+          <div class="col-lg-8" style="margin-left: 40px;">
+            <label>User Name</label>
+            <input type="text" formControlName="name" [(ngModel)]="name" value="{{name}}" class="form-control">
+            <label>User Email</label>
+            <input type="email" formControlName="email" [(ngModel)]="email" value="{{email}}" disabled class="form-control">
+            <label>Phone Number</label>
+            <input type="text" formControlName="phoneNumber" [(ngModel)]="phone" value="{{phone}}" class="form-control">
+            <label>Company</label>
+            <input type="text" formControlName="company" [(ngModel)]="company" value="{{company}}" class="form-control">
+            <label>Age</label>
+            <input type="text" formControlName="Age" [(ngModel)]="age" value="{{age}}" class="form-control">
+          </div>
+        
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-success" style="float: right;">Update Profile</button>
+        </div>   
+      </div>
+    
+    </div>
+  </form>
+  </div>
+</header>
+
+
+<app-footer></app-footer>

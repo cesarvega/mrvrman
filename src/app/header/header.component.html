@@ -1,0 +1,163 @@
+<header [ngClass]="{'active': HdBar}">
+  <div class="blackSec">
+    <div class="exWrapper" fxLayout="row" fxLayoutAlign="space-between center">
+      <a routerLink="" id="VRLogoWhite"></a>
+      <nav id="midMenu">
+        <a routerLink="">Quest</a>
+        <a routerLink="">Rift S</a>
+        <a routerLink="">VR Fight Club</a>
+        <a routerLink="">Apps & Games</a>
+        <a routerLink="">Community</a>
+        <a routerLink="">Support</a>
+      </nav>
+      <nav id="logMenu">
+        <button data-toggle="modal" *ngIf="!isLoggedIn" data-target="#exampleModal" class="btn btn-primary">Login/Register</button>
+        <button *ngIf="isLoggedIn" routerLink="/profile" class="btn btn-primary">View Profile</button>
+        <button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-success">Logout</button>
+
+        
+        <a routerLink="" class="menu"></a>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Authentication</h5>
+                <button type="button" #closeModel class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="loginForm" (ngSubmit)="SignIn();">
+                  <div>
+                    <div style="text-align: center"><b>User Sign In</b></div><br>
+
+                    <input type="email" formControlName="email"
+                      [ngClass]="{'is-invalid':loginForm.get('email').touched && loginForm.get('email').invalid}"
+                      class="form-control" placeholder="Email Address">
+                    <div class="invalid-feedback">
+                      <div *ngIf="loginForm.get('email').errors?.required">Email is required</div>
+                      <div *ngIf="loginForm.get('email').errors?.email">Email must be a valid Address</div>
+                    </div>
+
+                    <br />
+
+
+                    <input type="password" formControlName="LPassword"
+                      [ngClass]="{'is-invalid':loginForm.get('LPassword').touched && loginForm.get('LPassword').invalid}"
+                      class="form-control" placeholder="Password">
+                    <div class="invalid-feedback">
+                      <div *ngIf="loginForm.get('LPassword').errors?.required">Password is required</div>
+                      <div *ngIf="loginForm.get('LPassword').errors?.minlength">Password must be greater then 6
+                        characters</div>
+                    </div>
+                    <div>
+                      <button type="button" (click)="closeModel.click()" data-toggle="modal" data-target="#resetModal"
+                        class="btn btn-link" style="float: right;color:red">Forget Password</button>
+                    </div>
+                    <br />
+
+                    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-block btn-primary">Sign
+                      In</button>
+                    <br />
+                    <button (click)="GoogleLogin()" class="btn btn-success btn-block">Sign In With Google</button>
+                    <hr />
+                  </div>
+                </form>
+
+                <div style="text-align: center"><b>User Registration</b></div><br>
+
+                <form [formGroup]="RegistrationForm" (ngSubmit)="Registration();">
+                  <input type="text" formControlName="name" class="form-control"
+                    [ngClass]="{'is-invalid':RegistrationForm.get('name').touched && RegistrationForm.get('name').invalid}"
+                    required placeholder="User Name">
+                  <div class="invalid-feedback">
+                    <div>Name is required</div>
+                  </div>
+                  <br />
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{'is-invalid':RegistrationForm.get('email').touched && RegistrationForm.get('email').invalid}"
+                    required placeholder="Email Address">
+                  <div class="invalid-feedback">
+                    <div *ngIf="RegistrationForm.get('email').errors?.required">Email is required</div>
+                    <div *ngIf="RegistrationForm.get('email').errors?.email">Email must be a valid Address</div>
+                  </div>
+                  <br />
+
+                  <input type="password" formControlName="password"
+                    [ngClass]="{'is-invalid':RegistrationForm.get('password').touched && RegistrationForm.get('password').invalid}"
+                    class="form-control" required placeholder="Password">
+                  <div class="invalid-feedback">
+                    <div *ngIf="RegistrationForm.get('password').errors?.required">Password is required</div>
+                    <div *ngIf="RegistrationForm.get('password').errors?.minlength">Password must be greater then 6
+                      characters</div>
+                  </div>
+                  <br />
+                  <input type="password" formControlName="confirmPassword"
+                    [ngClass]="{'is-invalid':RegistrationForm.get('confirmPassword').touched && RegistrationForm.get('confirmPassword').invalid}"
+                    class="form-control" required placeholder="Confirm Password">
+                  <div class="invalid-feedback">
+                    <div *ngIf="RegistrationForm.get('confirmPassword').errors?.required">Password is required</div>
+                    <div *ngIf="RegistrationForm.get('confirmPassword').errors?.minlength">Password must be greater then
+                      6 characters</div>
+                  </div>
+
+                  <br />
+                  <input type="text" formControlName="company" class="form-control" placeholder="Company"><br />
+                  <input type="text" formControlName="phoneNumber" class="form-control"
+                    placeholder="Phone Number"><br />
+                  <input type="number" formControlName="Age" class="form-control" placeholder="Age"><br />
+                  <button type="submit" class="btn btn-block btn-primary">Register</button>
+
+                </form>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="resetModal" style="padding-top:30px;" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Password recovery</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="restPass" (ngSubmit)="resetPassword();">
+
+                  <input type="email" formControlName="email"
+                    [ngClass]="{'is-invalid':restPass.get('email').touched && restPass.get('email').invalid}"
+                    class="form-control" placeholder="Email Address" required>
+                  <div class="invalid-feedback">
+                    <div *ngIf="restPass.get('email').errors?.required">Email is required</div>
+                    <div *ngIf="restPass.get('email').errors?.email">Email must be a valid Address</div>
+                  </div>
+                  <br />
+                  <button type="submit" [disabled]="!restPass.valid" class="btn btn-block btn-success">Send Password
+                    Rest Email</button>
+                  <br />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="whiteSec">
+    <div class="wrapper" fxLayout="row" fxLayoutAlign="space-between center">
+      <a routerLink="" id="VRLogo"></a>
+      <nav>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+        <a routerLink="/features" routerLinkActive="active">Features</a>
+        <a routerLink="/profile" routerLinkActive="active">Profile</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div id="headGap" *ngIf="HdBar"></div>

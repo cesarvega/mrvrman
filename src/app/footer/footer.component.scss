@@ -1,0 +1,132 @@
+footer {
+    padding: 30px 0;
+    border-top: 1px solid #686868;
+    text-align: center;
+    font-size: 12px;
+    color: #787878;
+}
+
+footer aside {
+    width: calc(95% / 5);
+    text-align: left;
+}
+
+footer aside h4 {
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+footer aside h5 {
+    color: #e2e2e2;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+footer aside a {
+    font-size: 13px;
+    display: inline-block;
+    width: 100%;
+    color: #a2a2a2;
+    margin: 5px 0;
+    text-decoration: none;
+    transition: 0.2s all linear;
+}
+
+footer aside a:hover { color: #efefef; }
+
+footer aside p a {
+    width: auto;
+    color: #148aff;
+}
+
+footer aside form {
+    border: #828282 solid 2px;
+    margin: 10px 0;
+}
+
+footer aside form input[type=email] {
+    background-color: transparent;
+    color: #e2e2e2;
+    font-size: 14px;
+    padding: 8px 8px;
+    border: none;
+    width: calc(100% - 30px);
+}
+
+footer aside form button[type=submit] {
+    width: 30px;
+    border: none;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-image: url('/assets/icons/right-arrow.svg');
+}
+
+footer hr {
+    margin: 10px 0;
+    border: none;
+    border-top: #c2c2c2 solid thin;
+}
+
+footer aside nav {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: #c2c2c2 solid thin;
+}
+
+footer aside nav a {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer aside nav a.facebook { background-image: url('/assets/icons/facebook.svg'); }
+
+footer aside nav a.instagram { background-image: url('/assets/icons/instagram.svg'); }
+
+footer aside nav a.twitter { background-image: url('/assets/icons/twitter.svg'); }
+
+footer aside nav a.youtube { background-image: url('/assets/icons/youtube.svg'); }
+
+footer aside nav a.twitch { background-image: url('/assets/icons/twitch.svg'); }
+
+nav.wrapper { padding-top: 20px; }
+
+nav.wrapper nav select {
+    background-color: transparent;
+    border: none;
+    color: #e2e2e2;
+}
+
+nav.wrapper nav a {
+    margin-left: 15px;
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: 0.2s all linear;
+}
+
+nav.wrapper nav a:hover { color: #ffffff; }
+
+
+@media screen
+  and (min-width: 600px)
+  and (max-width: 959px) {
+      footer aside {
+          width: 280px;
+          margin: 10px;
+      }
+}
+
+@media screen
+  and (max-width: 599px) {
+      footer aside {
+          width: 100%;
+          margin: 10px 0;
+      }
+}
