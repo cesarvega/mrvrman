@@ -3,12 +3,11 @@
     <div class="exWrapper" fxLayout="row" fxLayoutAlign="space-between center">
       <a routerLink="" id="VRLogoWhite"></a>
       <nav id="midMenu">
-        <a routerLink="">Quest</a>
-        <a routerLink="">Rift S</a>
-        <a routerLink="">VR Fight Club</a>
-        <a routerLink="">Apps & Games</a>
-        <a routerLink="">Community</a>
-        <a routerLink="">Support</a>
+        <a routerLink="">Design</a>
+        <a routerLink="">Sound</a>
+        <a routerLink="">Videos</a>
+        <a routerLink="">Gallery</a>
+        <a routerLink="/profile">Profile</a>
       </nav>
       <nav id="logMenu">
         <button data-toggle="modal" *ngIf="!isLoggedIn" data-target="#exampleModal" class="btn btn-primary">Login/Register</button>
@@ -154,8 +153,8 @@
       <a routerLink="" id="VRLogo"></a>
       <nav>
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
-        <a routerLink="/features" routerLinkActive="active">Features</a>
-        <a routerLink="/profile" routerLinkActive="active">Profile</a>
+        <a routerLink="/features" routerLinkActive="active">Company</a>
+        <a routerLink="/fight" routerLinkActive="active">VR Figth Club</a>
       </nav>
     </div>
   </div>

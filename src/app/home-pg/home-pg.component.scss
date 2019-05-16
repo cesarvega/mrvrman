@@ -172,3 +172,30 @@ section#whatInclude img { width: 100%; }
     }
     section#donateSec aside:last-child { border-top: #e2e2e2 solid thin; border-left: none; }
 }
+
+
+section#oneSec {
+    background-color: #444444;
+    padding: 50px 0;
+    text-align: center;
+}
+
+section#oneSec h4 {
+    color: #898989;
+    font-size: 16px;
+}
+
+section#oneSec h2 {
+    font-size: 30px;
+    color: #4d4d4d;
+    margin: 15px 0;
+}
+
+section#oneSec p {
+    font-size: 15px;
+    color: #4d4d4d;
+}
+
+section#oneSec img {
+    width: 100%;
+}

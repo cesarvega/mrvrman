@@ -71,7 +71,14 @@ header div.whiteSec {
     background-color: #ffffff;
 }
 
-header a#VRLogoWhite,
+header a#VRLogoWhite {
+    width: 70px;
+    height: 53px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url('/assets/images/whiteLogoMrVR.png');
+}
 header a#VRLogo {
     width: 70px;
     height: 53px;

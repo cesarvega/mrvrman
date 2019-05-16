@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FightComponent } from './fight/fight.component';
+import { CharacterComponent } from './character/character.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FightComponent } from './fight/fight.component';
     FeaturesComponent,
     UserProfileComponent,
     FightComponent,
+    CharacterComponent,
 
   ],
   imports: [
